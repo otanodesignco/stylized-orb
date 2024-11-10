@@ -27,5 +27,7 @@ void main()
     clip( noiseCutOff, uAlphaThreshold, 0 );
 
     gl_FragColor = vec4( colorFinal, noiseCutOff );
+    #include <tonemapping_fragment>
+    #include <colorspace_fragment>
 
 }
