@@ -16,6 +16,8 @@ export default function MeshSpiralMaterial({
     frontColor = '#320564', // front color, should be darker
     backColor = '#ec22ff', // back color, should be lighter
     intensity = 1.5, // intensity of back color
+    powerOffset = 4.0, // used to increase black of noise
+    noiseCutOff = 0.486, // controls the step function for the noise cut off
     colorBoth = false, // decide if you color both sides
     },
     ...props ) 
@@ -42,6 +44,8 @@ export default function MeshSpiralMaterial({
         uFrontColor: fColor,
         uBackColor: bColor,
         uNoise: noiseTexture,
+        uPowerOffset: powerOffset,
+        uNoiseCutOff: noiseCutOff,
         uColorBoth: colorBoth
     }
 
@@ -50,8 +54,6 @@ export default function MeshSpiralMaterial({
 
         // update time uniform
         self.current.uniforms.uTime.value += delta
-
-        console.log( self.current.uniforms.uTime.value )
 
     })
 

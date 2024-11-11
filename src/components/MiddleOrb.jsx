@@ -20,7 +20,7 @@ export default function MiddleOrb(props)
 
                 <MeshNoiseMaterial
                     baseColor='#42a6ff'
-                    colorIntensity={ 3.1 }
+                    colorIntensity={ 2.3 }
                     darkPower={ 6 }
                 />
             </mesh>

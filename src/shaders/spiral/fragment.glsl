@@ -2,6 +2,8 @@ uniform float uTime;
 uniform vec3 uFrontColor;
 uniform vec3 uBackColor;
 uniform sampler2D uNoise;
+uniform float uPowerOffset;
+uniform float uNoiseCutOff;
 uniform bool uColorBoth;
 
 in vec2 vUv;
@@ -17,9 +19,9 @@ void main()
     vec3 noiseVoronoi = texture( uNoise, uv ).rgb;
 
     // create a cutoff threshold using pow to increase dark
-    float noiseCutOff = pow( noiseVoronoi.r, 4.0 );
+    float noiseCutOff = pow( noiseVoronoi.r, uPowerOffset );
 
-    noiseCutOff = step( 0.4, noiseCutOff );
+    noiseCutOff = step( uNoiseCutOff, noiseCutOff );
 
     // assign colors with noise
     vec3 colorFront = uFrontColor;
@@ -37,7 +39,7 @@ void main()
     }
 
     // clip based on noise cutoff
-    clip( noiseCutOff, 0.486, 0 );
+    clip( noiseCutOff, uNoiseCutOff, 0 );
 
     gl_FragColor = vec4( colorFinal, noiseCutOff );
     //gl_FragColor = vec4( uvTiled, 0.8, 1.0 );

@@ -20,7 +20,7 @@ export default function CenterOrb(props)
 
                 <MeshNoiseMaterial
                     baseColor='#ff821c'
-                    colorIntensity={ 3.1 }
+                    colorIntensity={ 2.98 }
                 />
             </mesh>
         </group>
