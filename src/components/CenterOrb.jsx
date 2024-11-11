@@ -19,8 +19,8 @@ export default function CenterOrb(props)
                 <icosahedronGeometry args={[ 1.1, 5, 5 ]} />
 
                 <MeshNoiseMaterial
-                    baseColor='#ff821c'
-                    colorIntensity={ 2.98 }
+                    baseColor='#ffe16d'
+                    colorIntensity={ 1.3 }
                 />
             </mesh>
         </group>

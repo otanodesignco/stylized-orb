@@ -8,8 +8,8 @@ export default function MiddleOrb(props)
 
     useFrame( ( state, delta ) =>
     {
-        self.current.rotation.y += delta * 1.4
-        self.current.rotation.z += delta * 1.2
+        self.current.rotation.y += delta * 2.4
+        self.current.rotation.z += delta * 2.6
     })
 
 
@@ -19,8 +19,8 @@ export default function MiddleOrb(props)
                 <icosahedronGeometry args={[ 1.1, 5, 5 ]} />
 
                 <MeshNoiseMaterial
-                    baseColor='#42a6ff'
-                    colorIntensity={ 2.3 }
+                    baseColor='#3df5ff'
+                    colorIntensity={ 1.5 }
                     darkPower={ 6 }
                 />
             </mesh>

@@ -6,6 +6,7 @@ import Experience from './Experience.jsx'
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 root.render(
+    <div className='webgl-container'>
     <Canvas
         camera={ {
             fov: 45,
@@ -16,4 +17,5 @@ root.render(
     >
         <Experience />
     </Canvas>
+    </div>
 )

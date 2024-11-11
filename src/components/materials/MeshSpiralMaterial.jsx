@@ -17,7 +17,7 @@ export default function MeshSpiralMaterial({
     backColor = '#ec22ff', // back color, should be lighter
     intensity = 1.5, // intensity of back color
     powerOffset = 4.0, // used to increase black of noise
-    noiseCutOff = 0.486, // controls the step function for the noise cut off
+    noiseCutOff = 0.32, // controls the step function for the noise cut off
     colorBoth = false, // decide if you color both sides
     },
     ...props ) 
