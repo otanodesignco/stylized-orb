@@ -8,8 +8,7 @@ export default function MiddleOrb(props)
 
     useFrame( ( state, delta ) =>
     {
-        self.current.rotation.y += delta * 2.4
-        self.current.rotation.z += delta * 2.6
+        self.current.rotation.x -= delta * 2.4
     })
 
 
@@ -20,8 +19,8 @@ export default function MiddleOrb(props)
 
                 <MeshNoiseMaterial
                     baseColor='#3df5ff'
-                    colorIntensity={ 1.5 }
-                    darkPower={ 6 }
+                    colorIntensity={ 1.1 }
+                    darkPower={ 8 }
                 />
             </mesh>
         </group>

@@ -8,7 +8,6 @@ export default function CenterOrb(props)
 
     useFrame( ( state, delta ) =>
     {
-        self.current.rotation.y += delta * 1.6
         self.current.rotation.z += delta * 1.4
     })
 
@@ -19,8 +18,8 @@ export default function CenterOrb(props)
                 <icosahedronGeometry args={[ 1.1, 5, 5 ]} />
 
                 <MeshNoiseMaterial
-                    baseColor='#ffe16d'
-                    colorIntensity={ 1.3 }
+                    baseColor='#ffbf11'
+                    colorIntensity={ 1.2 }
                 />
             </mesh>
         </group>

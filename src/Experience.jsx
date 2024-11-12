@@ -18,21 +18,21 @@ export default function Experience()
 
        if( progress.progress === 100 )
        {
-            damp3( self.current.scale, 1, 0.15, delta)
+            damp3( self.current.scale, 0.85, 0.15, delta)
        }
             
     })
 
     return <>
         <EffectComposer>
-            <Bloom luminanceThreshold={ 1.1 } intensity={ 1 } />
+            <Bloom luminanceThreshold={ 0.9 } intensity={ 1 } luminanceSmoothing={0.025} mipmapBlur />
         </EffectComposer>
 
 
         <group ref={ self } scale={0}>
             <FlashSpiral scale={ 2 } />
-            <MiddleOrb scale={ 1.5 } />
-            <CenterOrb scale={ 1.4 } />
+            <MiddleOrb scale={ 1.3 } />
+            <CenterOrb scale={ 1.25 } />
         </group>
 
     </>
