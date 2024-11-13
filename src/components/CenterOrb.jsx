@@ -8,7 +8,11 @@ export default function CenterOrb(props)
 
     useFrame( ( state, delta ) =>
     {
+        const time = state.clock.getElapsedTime() * 5
+        const scale = 0.15 * Math.sin(time) + 0.85
+
         self.current.rotation.z += delta * 1.4
+        self.current.scale.set( scale, scale, scale )
     })
 
 
@@ -19,7 +23,8 @@ export default function CenterOrb(props)
 
                 <MeshNoiseMaterial
                     baseColor='#ffbf11'
-                    colorIntensity={ 1.2 }
+                    colorIntensity={ 1.8 }
+                    darkPower={ 0.35 }
                 />
             </mesh>
         </group>

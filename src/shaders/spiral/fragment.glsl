@@ -29,7 +29,7 @@ void main()
     uvCutOff = smoothstep( 0.1, 0.3, uvCutOff );
     float uvCutOff2 = smoothstep( 0.9, 0.65, uv.y );
 
-    noiseCutOff = step( uNoiseCutOff, noiseCutOff );
+    //noiseCutOff = step( uNoiseCutOff, noiseCutOff );
 
     // assign colors with noise
     vec3 colorFront = uFrontColor;

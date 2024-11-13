@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import FlashSpiral from './components/FlashSpiral.jsx'
-import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import MiddleOrb from './components/MiddleOrb.jsx'
 import CenterOrb from './components/CenterOrb.jsx'
 import { useFrame } from '@react-three/fiber'
@@ -23,17 +22,12 @@ export default function Experience()
             
     })
 
-    return <>
-        <EffectComposer>
-            <Bloom luminanceThreshold={ 0.9 } intensity={ 1 } luminanceSmoothing={0.025} mipmapBlur />
-        </EffectComposer>
-
-
+    return(
+       
         <group ref={ self } scale={0}>
             <FlashSpiral scale={ 2 } />
             <MiddleOrb scale={ 1.3 } />
             <CenterOrb scale={ 1.25 } />
         </group>
-
-    </>
+    )
 }

@@ -19,7 +19,7 @@ void main()
 
     float noiseCutOff = pow( noisePerlin.r, uDarkPower );
 
-    noiseCutOff = step( 0.03, noiseCutOff );
+    //noiseCutOff = step( 0.03, noiseCutOff );
 
     vec3 colorFinal = uColor;
     colorFinal *= noiseCutOff;

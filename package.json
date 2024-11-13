@@ -15,9 +15,11 @@
     "vite-plugin-restart": "^0.4.1"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.108.1",
     "@react-three/fiber": "^8.16.8",
     "@react-three/postprocessing": "2.16",
+    "gsap": "^3.12.5",
     "leva": "^0.9.35",
     "maath": "^0.10.8",
     "postprocessing": "6.35",
