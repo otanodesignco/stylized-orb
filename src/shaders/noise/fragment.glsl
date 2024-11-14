@@ -8,12 +8,16 @@ in vec2 vUv;
 
 #include ../util/clip.glsl
 #include ../uv/twirl.glsl
+#include ../uv/tileOffset.glsl
 
 void main()
 {
 
     vec2 uv = vUv;
     float time = uTime * 0.6;
+
+    // vec2 timeOffset = vec2(  0.0, uTime * 0.8 );
+    // vec2 uvTiled =  tileOffset( uv, vec2( 1.0 ), timeOffset );
 
     vec3 noisePerlin = texture( uNoise, uv ).rbg;
 

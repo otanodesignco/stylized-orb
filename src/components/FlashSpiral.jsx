@@ -20,7 +20,7 @@ export default function FlashSpiral(props)
 
     useFrame( ( state, delta ) =>
     {
-        const time = state.clock.getElapsedTime() * 4.8
+        const time = state.clock.getElapsedTime() * 4.97
         const scale = 0.1 * Math.sin(time) + 0.9
 
         self.current.rotation.y += delta * 3
