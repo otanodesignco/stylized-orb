@@ -15,12 +15,12 @@ void main()
 {
     vec2 uv = vUv;
 
-    // vec2 timeOffset = vec2( uTime * 0.7, 0.0 );
+    vec2 timeOffset = vec2( uTime * 0.3, uTime * 0.3 );
 
-    // vec2 uvTiled =  tileOffset( uv, vec2( 1.0 ), timeOffset );
+    vec2 uvTiled =  tileOffset( uv, vec2( 1.0 ), timeOffset, false );
 
     // noise from texture sampled at r channel
-    vec3 noiseVoronoi = texture( uNoise, uv ).rgb;
+    vec3 noiseVoronoi = texture( uNoise, uvTiled ).rgb;
 
     // create a cutoff threshold using pow to increase dark
     float noiseCutOff = pow( noiseVoronoi.r, uPowerOffset );
@@ -29,7 +29,7 @@ void main()
     uvCutOff = smoothstep( 0.1, 0.3, uvCutOff );
     float uvCutOff2 = smoothstep( 0.9, 0.65, uv.y );
 
-    //noiseCutOff = step( uNoiseCutOff, noiseCutOff );
+    noiseCutOff = step( uNoiseCutOff, noiseCutOff );
 
     // assign colors with noise
     vec3 colorFront = uFrontColor;

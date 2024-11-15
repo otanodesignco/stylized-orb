@@ -11,7 +11,7 @@ export default function MiddleOrb(props)
         const time = state.clock.getElapsedTime() * 5
         const scale = 0.15 * Math.sin(time) + 0.85
 
-        self.current.rotation.x -= delta * 2.4
+        // self.current.rotation.x += delta * 2.4
         self.current.scale.set( scale, scale, scale )
     })
 

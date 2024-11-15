@@ -3,7 +3,7 @@ import { extend, useFrame } from '@react-three/fiber'
 import { shaderMaterial, useTexture } from '@react-three/drei'
 import vertex from '../../shaders/spiral/vertex.glsl'
 import fragment from '../../shaders/spiral/fragment.glsl'
-import { Color, DoubleSide } from 'three'
+import { Color, DoubleSide, RepeatWrapping } from 'three'
 
 
 /* 
@@ -30,6 +30,8 @@ export default function MeshSpiralMaterial({
     const fColor = new Color( frontColor )
     const bColor = new Color( backColor ).multiplyScalar( intensity )
     const noiseTexture = useTexture( './textures/noiseVoronoi.png' )
+    noiseTexture.wrapS = RepeatWrapping
+    noiseTexture.wrapT = RepeatWrapping
 
     // handle colorBoth
     if( typeof colorBoth !== 'boolean' )

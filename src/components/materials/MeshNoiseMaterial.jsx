@@ -1,6 +1,6 @@
 import { extend, useFrame } from "@react-three/fiber"
 import { shaderMaterial, useTexture } from "@react-three/drei"
-import { Color, DoubleSide } from "three"
+import { Color, DoubleSide, RepeatWrapping, Vector2 } from "three"
 import { useRef } from "react"
 import vertex from '../../shaders/noise/vertex.glsl'
 import fragment from '../../shaders/noise/fragment.glsl'
@@ -10,14 +10,20 @@ export default function MeshNoiseMaterial( {
     colorIntensity = 3.1, // intensity of the noise
     darkPower = 3.5, // controls the power in the hsader to adjust darkness
     alphaThreshold = 0.7,
+    timedOffset = new Vector2( 1.0, 1.0 ),
 },
 ...props ) 
 {
     const self = useRef()
     const noisePerlin = useTexture('./textures/noiseValue_albedo.png')
+    noisePerlin.wrapS = RepeatWrapping
+    noisePerlin.wrapT = RepeatWrapping
 
     const colorBase = new Color( baseColor ).multiplyScalar( colorIntensity )
 
+
+    timedOffset = ( timedOffset instanceof Vector2 ) ? timedOffset : new Vector2( 1.0, 1.0 )
+    
     const uniforms = 
     {
         uTime: 0,
@@ -25,6 +31,7 @@ export default function MeshNoiseMaterial( {
         uColor: colorBase,
         uDarkPower: darkPower,
         uAlphaThreshold: alphaThreshold,
+        uTimeOffset: timedOffset,
     }
 
     useFrame( ( state, delta) => {
