@@ -22,7 +22,7 @@ export default function MiddleOrb(props)
                 <icosahedronGeometry args={[ 1.1, 5, 5 ]} />
 
                 <MeshNoiseMaterial
-                    baseColor='#3df5ff'
+                    baseColor='#3DF5FF'
                     colorIntensity={ 1.5 }
                     darkPower={ 0.56 }
                 />

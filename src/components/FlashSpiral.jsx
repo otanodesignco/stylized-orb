@@ -13,7 +13,7 @@ export default function FlashSpiral(props)
     const self = useRef()
 
     const colorFront = '#022028'
-    const colorBack = '#2b665f'
+    const colorBack = '#3DF5FF'
        
 
     const { nodes } = useGLTF('./models/orb.glb')
@@ -35,7 +35,7 @@ export default function FlashSpiral(props)
                     frontColor={ colorFront }
                     backColor={ colorBack }
                     colorBoth={ true }
-                    intensity={ 2 }
+                    intensity={ 1.3 }
                 />
             </mesh>
         </group>

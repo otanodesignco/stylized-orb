@@ -23,7 +23,7 @@ export default function CenterOrb(props)
                 <icosahedronGeometry args={[ 1.1, 5, 5 ]} />
 
                 <MeshNoiseMaterial
-                    baseColor='#ffbf11'
+                    baseColor='#0E0EC0'
                     colorIntensity={ 2 }
                     darkPower={ 0.35 }
                     timedOffset={ new Vector2( 0.8, 0.8 ) }
